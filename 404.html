@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=./index.html">
+    <script>
+      // Preserve query params
+      const redirectTo = window.location.origin + window.location.pathname.split('/').slice(0, 3).join('/') + '/index.html' + window.location.search;
+      window.location.replace(redirectTo);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
