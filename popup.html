@@ -27,7 +27,7 @@
     <div class="container" style="">
         <h5>Informações do Paciente</h5>
         <p style="margin-top: 0;margin-bottom: 0;"> Nome : {global:nomePaciente}</p>
-        <p style="margin-top: 0;margin-bottom: 0;"> CPF : {global:documento}</p>
+        <p style="margin-top: 0;margin-bottom: 0;"> CPF : <span id="cpf"></span></p>
         <p style="margin-top: 0;margin-bottom: 0;"> E-mail : {global:email}</p>
         <p style="margin-top: 0;margin-bottom: 0;"> Telefone : {global:telefone}</p>
         <br \>
@@ -133,6 +133,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Function to get URL parameter value by name
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the CPF from the URL
+        const cpf = getURLParameter('cpf');
+
+        // Update the page with the CPF value if it exists
+        if (cpf) {
+            document.getElementById('cpf').innerText = cpf;
+        } else {
+            document.getElementById('cpf').innerText = 'CPF not provided';
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
